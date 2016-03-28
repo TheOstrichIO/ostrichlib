@@ -12,7 +12,7 @@ python:
 # command to install dependencies
 install:
   - pip install .
-  - pip install pytest-cov coveralls
+  - pip install pytest-cov coveralls sphinx_rtd_theme
 # command to run tests
 script:
   py.test --cov=ostrich
