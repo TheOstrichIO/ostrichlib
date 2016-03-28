@@ -25,6 +25,10 @@ def test_safe_path_unicode():
             get_safe_path('foo1/b_a-r:baz@m.o=o \u00f6 עוגי'))
 
 
+def test_safe_path_bytes():
+    assert 'foo.bar' == get_safe_path(b'foo.bar')
+
+
 def test_safe_path_no_traversal():
     assert '.._.._.._etc_passwd' == get_safe_path('../../../etc/passwd')
 
