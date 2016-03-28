@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
 
+
+"""
+text utils module
+
+A collection of text-related utility functions. Hurray!
+"""
+
+
 # Python 2 / Python 3 compatibility fu
 # http://python-future.org/compatible_idioms.html
 from __future__ import absolute_import
@@ -50,6 +58,7 @@ def get_safe_path(in_str):
               of the path in the filesystem! Because of the conversions, many
               input strings will result the same output string, so it is the
               responsibility of the caller to decide how to handle this!
+
     >>> get_safe_path(' foo/bar.baz') == get_safe_path('foo$bar.baz ')
     True
     """
