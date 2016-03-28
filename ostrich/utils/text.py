@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
+# Python 2 / Python 3 compatibility fu
+# http://python-future.org/compatible_idioms.html
+from __future__ import absolute_import
+from __future__ import unicode_literals  # so strings without u'' are unicode
+
+# uniform unicode type across Python's
+from builtins import str as text  # from "future" library
 
 import re
 import unicodedata
@@ -8,6 +14,22 @@ import unicodedata
 
 _SAFE_PATH_RE = re.compile(r'[^a-zA-Z0-9\-\_\=\.]')
 _MAX_PATH_NAME_LEN = 255
+
+
+def as_text(str_or_bytes, encoding='utf-8', errors='strict'):
+    """Return input string as a text string.
+
+    Should work for input string that's unicode or bytes,
+    given proper encoding.
+
+    >>> print(as_text(b'foo'))
+    foo
+    >>> b'foo'.decode('utf-8') == u'foo'
+    True
+    """
+    if isinstance(str_or_bytes, text):
+        return str_or_bytes
+    return str_or_bytes.decode(encoding, errors)
 
 
 def get_safe_path(in_str):
@@ -32,7 +54,7 @@ def get_safe_path(in_str):
     True
     """
     norm_str = _SAFE_PATH_RE.sub(
-        '_', unicodedata.normalize('NFKD', in_str).strip())
+        '_', unicodedata.normalize('NFKD', as_text(in_str)).strip())
     if len(norm_str.strip('.')) == 0:
         # making sure the normalized result is non-empty, and not just dots
         raise ValueError(in_str)

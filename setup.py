@@ -10,6 +10,7 @@ setup(
     url='https://github.com/TheOstrichIO/ostrichlib',
     description=ostrich.__oneliner__,
     packages=find_packages(),
+    install_requires=['future'],
     setup_requires=['pytest-runner'],
     extras_require={
         'test': ['pytest', 'pytest-cov', 'pytest-pep8'],
