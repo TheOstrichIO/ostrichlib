@@ -23,7 +23,6 @@ deploy:
   provider: releases
   api_key:
     secure: JMhzqbuop1P6ivuqsj2bcnq7GqRMPT6Zw8/sQ8cEmBgV/yUneaxDJVg6UllEjBYFAAgVbNTtYIbG4uzzppRVYNFWqCgkru7Vuh8C2lVewvvMH+ZiRREFr45Fl8qIdlhcYFbgF+hxiHgahxOp8S4kKNfpU1Qwu5usP8rdCWC3iIUBsiqn4tWE+qXcqiY4wIeOeoHAtjoUq9GQNyAC7+KmV/tEcGUzCv5UOVC4vPyaUUTW1rk0m43i7Ys2XsmvMFoVssXOc+LajfuLhI+sV8/S6HaI/u4bz1u4Y2abh5QAA+Fg/Bdwx1RBMEeXob98G6NdNaOa1Cj/qyinpGDXNHM7M/ibOJnSanVwDAaVgmTVO0Fm3+Z3+5J3IUFyUQvtNbgBwGrDjiAp5nqT3gQ0mjL4BSotNukDUtnpdbr/Jrea2qGc8ltJKCqj3JICFHSVI/dGAIc29mZLd4HLiwKQEDokdj/J1CMlBgpgwgETg4V5T3hiIl5CC+npwfJsC+xBwG5Yq9Xw9cO3kLIKHDmoOCJh8OZVsg2b6PMZ9fmt8DCQ4Ws2YK9YaLqV/FgenxKNC2I7FtSVqHa7oQLI+nIX1WVN8B1yLuuh2yp82PzM0wtyTrA0dpDVN+00gkXNzjoazyv21X44dfo2RqSdCivLX6Th/lCdC6LeAGTG09eNMrBww/k=
-  file: ''
   on:
     repo: TheOstrichIO/ostrichlib
     tags: True
