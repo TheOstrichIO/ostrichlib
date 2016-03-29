@@ -19,10 +19,28 @@ script:
 # commands to run after success
 after_success:
   coveralls
-deploy:
-  provider: releases
-  api_key:
-    secure: JMhzqbuop1P6ivuqsj2bcnq7GqRMPT6Zw8/sQ8cEmBgV/yUneaxDJVg6UllEjBYFAAgVbNTtYIbG4uzzppRVYNFWqCgkru7Vuh8C2lVewvvMH+ZiRREFr45Fl8qIdlhcYFbgF+hxiHgahxOp8S4kKNfpU1Qwu5usP8rdCWC3iIUBsiqn4tWE+qXcqiY4wIeOeoHAtjoUq9GQNyAC7+KmV/tEcGUzCv5UOVC4vPyaUUTW1rk0m43i7Ys2XsmvMFoVssXOc+LajfuLhI+sV8/S6HaI/u4bz1u4Y2abh5QAA+Fg/Bdwx1RBMEeXob98G6NdNaOa1Cj/qyinpGDXNHM7M/ibOJnSanVwDAaVgmTVO0Fm3+Z3+5J3IUFyUQvtNbgBwGrDjiAp5nqT3gQ0mjL4BSotNukDUtnpdbr/Jrea2qGc8ltJKCqj3JICFHSVI/dGAIc29mZLd4HLiwKQEDokdj/J1CMlBgpgwgETg4V5T3hiIl5CC+npwfJsC+xBwG5Yq9Xw9cO3kLIKHDmoOCJh8OZVsg2b6PMZ9fmt8DCQ4Ws2YK9YaLqV/FgenxKNC2I7FtSVqHa7oQLI+nIX1WVN8B1yLuuh2yp82PzM0wtyTrA0dpDVN+00gkXNzjoazyv21X44dfo2RqSdCivLX6Th/lCdC6LeAGTG09eNMrBww/k=
-  on:
-    repo: TheOstrichIO/ostrichlib
-    tags: True
+
+# Decided not to deploy from Travis to PyPI this way, as this will trigger a
+# PyPI deployment *for every successful build in the matrix*, which is
+# definitely not what I want (not anyone who has matrix > 1 for that matter...)
+# Follow: https://github.com/travis-ci/travis-ci/issues/929
+# Until this gets settled - deploy to PyPI using `make pypi` manually.
+# deploy:
+#   provider: pypi
+#   user: itamaro
+#   password:
+#     secure: dDECRyaLVboVdPQ1o0UyP1Ex5CowBdFbhrFu4YAYf74XGc06eCahUQuvQaYVUqMUl2okNWSsUtEt493Fs+NW5nsmvudgrLdndxqMnAjsq5NyVJpGpH/q1yk5FISXQgyt1HC78wlqlnYczFRuLoDkbfmoFdZf+mnIJ8ZSAkyVmDqYkuIkkLMqwaTgjb5Zw8nYlY8BjIp23cxBFl+MV6WXkvgTe6D815/Zs1ru/yju+lLSPf/RRgWhVfb19CiFV65kF3hs0ACZ4mNWWwWP9fvNZoENck9AsNSD57i1f22HNwKHp9UGFvff9b18BO/7b1/A54/mEgvi211yO0gk14WsK93JXfe1IOomelocV7uwjN1YmIc+uthZYTpoFAhmhL8vNNjS+ld4VobMWjumcdMBRlx7I36p4WE0m9fQ5lur34LE9DFLgIJ8FufPPw9QjrjYtvVXw6IfITjNUzSx4+p2Q/aHJSTcJ3daOK1F3Pyw4dzFMJe7nesPefr0v3m+MRliqOnrmZdCMHT08znk8riS7CSIS/E+Z4JQA8sUXN2FVF4zhC2p2Ba2a43s6jlFZD88lvGMtCHLeraNBXTUC4dR7dCoukLHGJS//j3Bixl3FbnevZ+gmL/ZSTMYGxYJ0Mqp+pxRzRHGK2rX2ObdJQglyZHMmzEpWLoNvVphSppc/fo=
+#   on:
+#     tags: True
+#     distributions: sdist bdist_wheel
+#     repo: TheOstrichIO/ostrichlib
+#     branch: release/*
+
+# Not sure I need this...
+# deploy:
+#   provider: releases
+#   api_key:
+#     secure: JMhzqbuop1P6ivuqsj2bcnq7GqRMPT6Zw8/sQ8cEmBgV/yUneaxDJVg6UllEjBYFAAgVbNTtYIbG4uzzppRVYNFWqCgkru7Vuh8C2lVewvvMH+ZiRREFr45Fl8qIdlhcYFbgF+hxiHgahxOp8S4kKNfpU1Qwu5usP8rdCWC3iIUBsiqn4tWE+qXcqiY4wIeOeoHAtjoUq9GQNyAC7+KmV/tEcGUzCv5UOVC4vPyaUUTW1rk0m43i7Ys2XsmvMFoVssXOc+LajfuLhI+sV8/S6HaI/u4bz1u4Y2abh5QAA+Fg/Bdwx1RBMEeXob98G6NdNaOa1Cj/qyinpGDXNHM7M/ibOJnSanVwDAaVgmTVO0Fm3+Z3+5J3IUFyUQvtNbgBwGrDjiAp5nqT3gQ0mjL4BSotNukDUtnpdbr/Jrea2qGc8ltJKCqj3JICFHSVI/dGAIc29mZLd4HLiwKQEDokdj/J1CMlBgpgwgETg4V5T3hiIl5CC+npwfJsC+xBwG5Yq9Xw9cO3kLIKHDmoOCJh8OZVsg2b6PMZ9fmt8DCQ4Ws2YK9YaLqV/FgenxKNC2I7FtSVqHa7oQLI+nIX1WVN8B1yLuuh2yp82PzM0wtyTrA0dpDVN+00gkXNzjoazyv21X44dfo2RqSdCivLX6Th/lCdC6LeAGTG09eNMrBww/k=
+#   on:
+#     repo: TheOstrichIO/ostrichlib
+#     tags: True
