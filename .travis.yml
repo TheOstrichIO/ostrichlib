@@ -1,21 +1,29 @@
 language: python
 python:
-  - "2.6"
-  - "2.7"
-  - "3.3"
-  - "3.4"
+  # - "2.6"
+  # - "2.7"
+  # - "3.3"
+  # - "3.4"
   - "3.5"
-  - "3.5-dev" # 3.5 development branch
-  - "nightly" # currently points to 3.6-dev
-  - "pypy"
-  - "pypy3"
+  # - "3.5-dev" # 3.5 development branch
+  # - "nightly" # currently points to 3.6-dev
+  # - "pypy"
+  # - "pypy3"
+env:
+  - TOXENV=py26
+  - TOXENV=py27
+  - TOXENV=py32
+  - TOXENV=py33
+  - TOXENV=py34
+  - TOXENV=py35
+  - TOXENV=pypy
+  - TOXENV=pypy3
 # command to install dependencies
 install:
   - pip install .
-  - pip install pytest-cov coveralls sphinx_rtd_theme
+  - pip install tox coveralls sphinx_rtd_theme
 # command to run tests
-script:
-  py.test --cov=ostrich
+script: tox
 # commands to run after success
 after_success:
   coveralls
