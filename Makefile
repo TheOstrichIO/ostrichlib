@@ -12,6 +12,8 @@ help:
 	@echo '   make dist     Build source & wheel distributions                '
 	@echo '   make clean    Clean build & dist output directories             '
 	@echo '   make pypi     Clean, build dist, and upload to PyPI (twine)     '
+	@echo '   make ghrel_rc Create release candidate on GitHub                '
+	@echo '   make ghrel    Create release on GitHub                          '
 	@echo '                                                                   '
 
 test:
@@ -46,4 +48,11 @@ pypi: clean dist
 	twine upload dist/*
 	@echo "Finished uploading version to PyPI"
 
-.PHONY: help test tox lint_code lint_tests lint docs dist clean pypi
+ghrel_rc:
+	${PYTHON} scripts/gh_release.py --rc
+
+ghrel:
+	${PYTHON} scripts/gh_release.py
+
+.PHONY: help test tox lint_code lint_tests lint docs dist clean pypi \
+		ghrel_rc ghrel
