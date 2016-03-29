@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+# pylint: disable=misplaced-comparison-constant
+
+
+"""Tests for text utils module"""
+
 
 from __future__ import unicode_literals
 
@@ -15,8 +20,8 @@ def test_safe_path_spaces():
 
 def test_safe_path_chars():
     """Check that some chars are converted to _ and some are preserved"""
-    assert ('foo_1-=_____________________________' ==
-            get_safe_path('foo_1-=!@#$%^&*()+[]\{\}<>/\\?,"\';:`~'))
+    assert ('foo_1-=___________________________' ==
+            get_safe_path('foo_1-=!@#$%^&*()+[]{}<>/\\?,"\';:`~'))
 
 
 def test_safe_path_unicode():
