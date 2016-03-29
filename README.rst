@@ -28,5 +28,5 @@ Installation
 Detailed Documentation
 ----------------------
 
-Available via `ReadTheDocs<https://readthedocs.org/projects/ostrichlib/badge/?version=latest>`_
+Available via `ReadTheDocs <https://readthedocs.org/projects/ostrichlib/badge/?version=latest>`_
 
