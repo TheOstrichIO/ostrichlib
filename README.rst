@@ -15,3 +15,18 @@ Ostrich Lib: Pythoning with an Ostrich
 ======================================
 
 A Bunch of Simple Useful Python Modules
+
+
+Installation
+------------
+
+.. code-block:: shell
+
+    pip install ostrichlib
+
+
+Detailed Documentation
+----------------------
+
+Available via `ReadTheDocs<https://readthedocs.org/projects/ostrichlib/badge/?version=latest>`_
+
