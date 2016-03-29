@@ -1,6 +1,15 @@
+import codecs
+from os.path import abspath, dirname, join
+
 from setuptools import setup, find_packages
 
 import ostrich
+
+
+with codecs.open(join(abspath(dirname(__file__)), 'README.rst'),
+                 encoding='utf-8') as readme_f:
+    long_description = readme_f.read()
+
 
 setup(
     name='ostrichlib',
@@ -9,6 +18,7 @@ setup(
     author_email='python@ostricher.com',
     url='https://github.com/TheOstrichIO/ostrichlib',
     description=ostrich.__oneliner__,
+    long_description=long_description,
     packages=find_packages(),
     install_requires=['future'],
     setup_requires=['pytest-runner'],
