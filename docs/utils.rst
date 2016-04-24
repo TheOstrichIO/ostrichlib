@@ -8,6 +8,13 @@ collections utils module
    :members:
 
 
+path utils module
+-----------------
+
+.. automodule:: ostrich.utils.path
+   :members: commonpath
+
+
 text utils module
 -----------------
 
