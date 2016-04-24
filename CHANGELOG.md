@@ -1,3 +1,11 @@
+# OstrichLib v0.1
+
+New OstrichLib release, focusing on backporting useful stuff from Python 3.5:
+
+- `ostrich.utils.path.commonpath` - Return the longest common sub-path of each pathname in paths sequence (returns a valid path, unlike `os.path.commonprefix`).
+- `ostrich.utils.proc.run` - Simply run a command with arguments.
+
+
 # OstrichLib v0.0
 
 Initial release of OstrichLib.
