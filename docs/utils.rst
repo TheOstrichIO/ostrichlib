@@ -15,6 +15,13 @@ path utils module
    :members: commonpath
 
 
+proc utils module
+-----------------
+
+.. automodule:: ostrich.utils.proc
+   :members:
+
+
 text utils module
 -----------------
 
