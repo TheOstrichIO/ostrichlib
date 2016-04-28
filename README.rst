@@ -7,7 +7,7 @@
     :alt: Code Coverage
 
 .. image:: https://readthedocs.org/projects/ostrichlib/badge/?version=latest
-    :target: http://ostrichlib.readthedocs.org/en/latest/?badge=latest
+    :target: http://ostrichlib.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
 ======================================
