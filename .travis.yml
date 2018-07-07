@@ -1,29 +1,20 @@
 language: python
 python:
-  # - "2.6"
-  # - "2.7"
-  # - "3.3"
-  # - "3.4"
-  # - "3.5"
+  - "2.6"
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
   - "3.6"
-  # - "nightly"
-  # - "pypy"
-  # - "pypy3"
-env:
-  - TOXENV=py26
-  - TOXENV=py27
-  - TOXENV=py33
-  - TOXENV=py34
-  - TOXENV=py35
-  - TOXENV=py36
-  - TOXENV=pypy
-  - TOXENV=pypy3
+  - "nightly"
+  - "pypy"
+  - "pypy3"
 # command to install dependencies
 install:
   - pip install .
-  - pip install tox coveralls sphinx_rtd_theme
+  - pip install pytest pytest-pep8 pytest-cov future coveralls sphinx_rtd_theme
 # command to run tests
-script: tox
+script: py.test --cov=ostrich --pep8 --doctest-modules ostrich tests
 # commands to run after success
 after_success:
   coveralls
