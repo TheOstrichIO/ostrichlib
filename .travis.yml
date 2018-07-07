@@ -4,9 +4,9 @@ python:
   # - "2.7"
   # - "3.3"
   # - "3.4"
-  - "3.5"
-  # - "3.5-dev" # 3.5 development branch
-  # - "nightly" # currently points to 3.6-dev
+  # - "3.5"
+  - "3.6"
+  # - "nightly"
   # - "pypy"
   # - "pypy3"
 env:
@@ -15,6 +15,7 @@ env:
   - TOXENV=py33
   - TOXENV=py34
   - TOXENV=py35
+  - TOXENV=py36
   - TOXENV=pypy
   - TOXENV=pypy3
 # command to install dependencies
@@ -29,7 +30,7 @@ after_success:
 
 # Decided not to deploy from Travis to PyPI this way, as this will trigger a
 # PyPI deployment *for every successful build in the matrix*, which is
-# definitely not what I want (not anyone who has matrix > 1 for that matter...)
+# definitely not what I want (nor anyone who has matrix > 1 for that matter...)
 # Follow: https://github.com/travis-ci/travis-ci/issues/929
 # Until this gets settled - deploy to PyPI using `make pypi` manually.
 # deploy:
